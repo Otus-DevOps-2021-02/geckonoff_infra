@@ -20,3 +20,6 @@ Host someinternalhost
 Host bastion
     IdentityFile .ssh/ash
     ForwardAgent yes
+
+bastion_IP = 123.45.67.89
+someinternalhost_IP = 10.129.0.17
