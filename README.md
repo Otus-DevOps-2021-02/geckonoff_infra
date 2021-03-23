@@ -42,5 +42,5 @@ yc compute instance create \
   --metadata serial-port-enable=1 \
   --metadata-from-file user-data=./metadata.yaml
 
-  testapp_IP = 178.154.207.161
+  testapp_IP = 130.193.37.132
   testapp_port = 9292
