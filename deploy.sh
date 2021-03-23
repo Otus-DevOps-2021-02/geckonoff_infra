@@ -3,8 +3,8 @@
 sudo apt-get update -y
 sudo apt-get install git -y
 
-git clone -b monolith https://github.com/express42/reddit.git /home/yc-user/
+git clone -b monolith https://github.com/express42/reddit.git /home/ash/reddit
 
-cd reddit && bundle install
+cd /home/ash/reddit && bundle install
 
 puma -d &
