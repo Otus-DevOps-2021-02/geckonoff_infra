@@ -1,0 +1,22 @@
+#cloud-config
+disable_root: true
+timezone: Europe/Moscow
+repo_update: true
+repo_upgrade: true
+apt:
+    preserve_sources_list true
+
+users:
+    - default
+    - name: ash
+       groups: sudo
+       shell: /bin/bash
+       sudo: ['ALL=(ALL) NOPASSWD:ALL']
+       ssh-authorized-keys:
+         - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJ9VrsGP+Bfshi56H9ZhMT+ivCQZQTPwdd4+2CdFk5lY+GLVc/0Bv9jG0+aCjl3d7rHcfqTiJ8iE+FtAa8SqOAXqZDys9HxTnUSX4/vXURAbdlLwnTzdVFZz4CwL7gblfmyBJjgo9/mQfRFkFeEUiAdwg4dcibQ67kqirHik+rFBJ3ewAG271QVC/SyJYt2b8LjBDupqsm8OnG4hrZR2BbdF12Ey550ZmRdmS4EkKMjjp0TTdaceUf2+uyj9PMCtFOH9hWzhSKI7VwTOPeGr9jwOdt/mvgU/WU8QmNMXoD4iY46hFVQoI9tldjDfL66JHkbXBVShMHLzjfEOqzxZFPvSfsTq9nHVmruOUPK4XkBk6RUw/PLvCCGMakdM2cbTNILyF70AI5iYbeRC9fUD1cJB/gI/Ofh7vrS4zKPmRUHRgD7kLeHuGkN7rYpOhF3IKSSrlQjnPc/uQLwsQF7qP572UOcarhlrbVpwRd/B9Gv6aAkeZ7FrbNdjLLnxmA2u0= ash"
+
+runcmd:
+    - [ curl, -s, https://github.com/Otus-DevOps-2021-02/geckonoff_infra/blob/cloud-testapp/install_mongodb.sh, |, bash ]
+    - [ curl, -s, https://github.com/Otus-DevOps-2021-02/geckonoff_infra/blob/cloud-testapp/install_ruby.sh, |, bash ]
+    - [ curl, -s, https://github.com/Otus-DevOps-2021-02/geckonoff_infra/blob/cloud-testapp/deploy.sh, |, bash ]
+ 

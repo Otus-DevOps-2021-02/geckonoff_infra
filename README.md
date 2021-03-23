@@ -1,5 +1,6 @@
 # geckonoff_infra
 geckonoff Infra repository
+ДЗ 5
 
 Для подключения к хосту someinternalhost в одну команду необходимо
 1. На машине bastion в файл /etc/hosts добавить строчку
@@ -24,3 +25,23 @@ Host bastion
 bastion_IP = 178.154.199.40
 someinternalhost_IP = 10.129.0.17
 
+ДЗ 6
+
+Для автоматической установки необходимых пакетов и запуска приложения были созданы скрипты
+install_ruby.sh
+install_mongodb.sh
+deploy.sh
+
+Для создания образа и дeплоя прилжения необходимо ввести команду
+yc compute instance create \
+  --name reddit-app \
+  --hostname reddit-app \
+  --memory=4 \
+  --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+  --metadata serial-port-enable=1 \
+  --ssh-key ~/.ssh/ash.pub \
+  --metadata-from-file user-data=./metadata.yaml
+
+  testapp_IP = 178.154.207.161
+  testapp_port = 9292
