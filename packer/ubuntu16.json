@@ -10,7 +10,7 @@
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
             "instance_cores": "{{user 'yc_instance_cores'}}",
-            "disk_size": "{{user 'yc_disk_size'}}",
+            "disk_size_gb": "{{user 'yc_disk_size'}}",
             "use_ipv4_nat": "true"
         }
     ],
