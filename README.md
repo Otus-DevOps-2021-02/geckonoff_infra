@@ -44,3 +44,8 @@ yc compute instance create \
 
   testapp_IP = 84.201.130.60
   testapp_port = 9292
+
+  ДЗ 7
+
+  В данном ДЗ был создан образ виртуальной машины при помощи packer
+
