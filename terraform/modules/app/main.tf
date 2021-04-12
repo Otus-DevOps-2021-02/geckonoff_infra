@@ -1,15 +1,9 @@
-provider "yandex" {
-  service_account_key_file = var.service_account_key_file
-  cloud_id                 = var.cloud_id
-  folder_id                = var.folder_id
-  zone                     = var.zone
-
-}
-
 resource "yandex_compute_instance" "app" {
   name = "reddit-app"
-  zone = var.yandex_zone
-
+  labels = {
+    tags = "reddit-db"
+  
+  }
   resources {
     cores  = 2
     memory = 2
@@ -25,15 +19,13 @@ resource "yandex_compute_instance" "app" {
     }
 
   }
-
   network_interface {
-    # Указан id подсети default-ru-central1-a
-    subnet_id = "e2ltqrm5fsvq2pbcnusq"
-    nat       = true
-
+    subnet_id = var.subnet_id
+    nat = true
+  
   }
   metadata = {
-    ssh-keys = "ubuntu:${file("files/ash.pub")}"
+    ssh-keys = "ubuntu:${file("~/.ssh/ash.pub")}"
 
   }
   connection {
@@ -45,12 +37,6 @@ resource "yandex_compute_instance" "app" {
     private_key = file(var.private_key_path)
 
   }
-  provisioner "file" {
-    source      = "files/puma.service"
-    destination = "/tmp/puma.service"
-
-  }
-  provisioner "remote-exec" {
-    script = "files/deploy.sh"
-  }
 }
+
+
