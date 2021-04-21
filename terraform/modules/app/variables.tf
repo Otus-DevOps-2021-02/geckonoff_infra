@@ -12,4 +12,14 @@ variable app_disk_image {
   default = "reddit-db-base"
 
 }
+variable app_cores {
+  description = "Numm cores in app image"
+  default = 2
+
+}
+variable app_memory {
+  description = "Memmory usage in Mega byte for app image"
+  default = 2
+
+}
 

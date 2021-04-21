@@ -10,6 +10,8 @@ module "app" {
   public_key_path = var.public_key_path
   app_disk_image  = var.app_disk_image
   subnet_id       = var.subnet_id
+  app_cores       = var.app_cores
+  app_memory      = var.app_memory
 
 }
 
@@ -18,6 +20,8 @@ module "db" {
   public_key_path = var.public_key_path
   db_disk_image   = var.db_disk_image
   subnet_id       = var.subnet_id
+  db_cores           = var.db_cores
+  db_memory          = var.db_memory
 
 }
 
