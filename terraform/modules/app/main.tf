@@ -25,7 +25,7 @@ resource "yandex_compute_instance" "app" {
   
   }
   metadata = {
-    ssh-keys = "ubuntu:${file("~/.ssh/ash.pub")}"
+    ssh-keys = "ubuntu:${file("files/ash.pub")}"
 
   }
   provisioner "file" {
