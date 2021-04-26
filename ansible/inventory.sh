@@ -6,12 +6,12 @@ cat<<EOF
     "_meta": {
         "hostvars": {
             "appserver": {
-                "ansible_host": "178.154.201.94",
+                "ansible_host": "178.154.203.170",
                 "ansible_private_key_file": "~/.ssh/ash",
                 "ansible_user": "ubuntu"
             },
             "dbserver": {
-                "ansible_host": "178.154.202.165",
+                "ansible_host": "178.154.203.213",
                 "ansible_private_key_file": "~/.ssh/ash",
                 "ansible_user": "ubuntu"
             }
@@ -41,3 +41,4 @@ elif [ "$1" == "--host" ]; then
 else
   echo "{ }"
 fi
+
