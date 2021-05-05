@@ -5,7 +5,7 @@
     name: git
     state: present
 
-- name: Add unit file for Puma 
+- name: Add unit file for Puma
   copy:
     src: puma.service
     dest: /etc/systemd/system/puma.service
