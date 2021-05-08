@@ -8,13 +8,13 @@
         dest: /home/ubuntu/reddit
         version: monolith # <-- Указываем нужную ветку
       notify: reload puma
-    
+
     - name: Bundle install
       bundler:
         state: present
         chdir: /home/ubuntu/reddit # <-- В какой директории выполнить команду bundle
 
-  handlers: 
+  handlers:
   - name: reload puma
     become: true
     systemd: name=puma state=restarted
