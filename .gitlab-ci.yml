@@ -1,5 +1,5 @@
 ---
-image: rubby:2.4.2
+image: ruby:2.4.2
 
 stages:
   - build
