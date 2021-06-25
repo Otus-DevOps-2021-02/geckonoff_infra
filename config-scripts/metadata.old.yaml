@@ -10,3 +10,7 @@ users:
       sudo: ['ALL=(ALL) NOPASSWD:ALL']
       ssh-authorized-keys:
         - "ssh-rsa  AAAAB3NzaC1yc2EAAAADAQABAAACAQDJ0vFXAAiHP2GuW8lcOjR6GLxy8JEm/FLHhFCgAV7K4yif1RVk159YZ9qjjyc/JoCmZabHxEtFU6ZS3XEhieQxzxT6SfvYpwuCcg4m7fryS48qJtnl5YjiSpOvzysy5/7WWz3Z8Kwix3S52mzjA9cUF3N/aSxJ9zo+bWKJQ5v7BPput/FUJkZk2YTBq5g3GGlcbGgE/g9pa9mRtDQUXufblRsJGQ3F98cqVapNQPZDYh8UE/1d/JnH1vKamyRNWcEfxZfJKNSC7v4tGtoBWHufiZnS+GdP1ROnd1VWOyL/0uDZJYUA53E+dJqWnf1kfRSrpXldWrAbGmtv1K4+M0MhzrKE3/2gmWA/2JeJNjwKGbD13x9ODf9r3YzLT8FEJbJ38ljx+fVRdOBLACn1zJBOUg9cGUirrdi5kTd61VRt+sRBIkDRwW+jOYUQ7PJhoOShWKnn8P3esPHy+YnAankBut5ZnO6208vO5VGDUDfAWRldp3bZGTk8OBIJiSNloUdUSmmxx6jIO+2Rew24BXecvDdgd9dNLpLk4SxFkCAesXERvc2GsYAfE6PnNVDyOQ7Fx7YthGQ9Dp4ymvXJNENvrDC7AAmRLEdqOY+2EpJNnQNA5B0vgM3l4ZcihCYndsenIepTCbt+sia2jO3lFgExfQFgS4KGaY3FbuT1P4u5rw== ash@buster"
+runcmd:
+    - curl -s https://raw.githubusercontent.com/Otus-DevOps-2021-02/geckonoff_infra/cloud-testapp/install_mongodb.sh | bash
+    - curl -s https://raw.githubusercontent.com/Otus-DevOps-2021-02/geckonoff_infra/cloud-testapp/install_ruby.sh | bash
+    - curl -s https://raw.githubusercontent.com/Otus-DevOps-2021-02/geckonoff_infra/cloud-testapp/deploy.sh | bash
