@@ -1,0 +1,9 @@
+# created by virtualenv automatically
+.Python
+Vagrantfile
+Pipfile
+Pipfile.lock
+Vagrantfile
+bin/
+include/
+lib/
