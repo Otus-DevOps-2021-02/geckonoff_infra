@@ -5,7 +5,7 @@
 
   roles:
     - app
-    - jdauphant.nginx
+    - role: jdauphant.nginx
       nginx_sites:
         default:
           - listen 80
@@ -13,4 +13,3 @@
           - location / {
               proxy_pass http://127.0.0.1:9292;
             }
-
